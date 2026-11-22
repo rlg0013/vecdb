@@ -51,11 +51,11 @@ func ReadFvecsFrom(r io.Reader) ([][]float32, error) {
 		dimension := int32(binary.LittleEndian.Uint32(dimensionBuf[:]))
 
 		if dimension <= 0 {
-			return nil, fmt.Errorf("invalid vector dimension: %w", dimension)
+			return nil, fmt.Errorf("invalid vector dimension: %d", dimension)
 		}
 
 		if dimension > 1_000_000 {
-			return nil, fmt.Errorf("vector dimension too large: %w", dimension)
+			return nil, fmt.Errorf("vector dimension too large: %d", dimension)
 		}
 
 		vector := make([]float32, int(dimension))
