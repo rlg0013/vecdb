@@ -1,0 +1,7 @@
+# Datasets
+datasets/*
+!datasets/.gitkeep
+
+# Dataset archives
+*.tar.gz
+*.zip
